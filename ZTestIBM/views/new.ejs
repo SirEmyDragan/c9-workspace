@@ -1,0 +1,77 @@
+<% include partials/header %>
+
+<!--<div class = "ui main text container segment">-->
+<div class = "ui main text container inverted segment">
+    <div class = "row">
+        <h1 style = "text-align: center;">Add a New User</h1>
+        <div style = "width: 375px; margin: 25px auto"> <!--width: 30%-->
+            <form action = "/users" method = "POST">
+                <h4>Personal Info</h4>
+                <div class = "form-group field">
+                    <input class = "form-control" type = "number" name = "user[id]" required = "required" placeholder = "Id">
+                </div>
+                <div class = "form-group">
+                    <input class = "form-control" type = "text" name = "user[name]" required = "required" placeholder = "Name">
+                </div>    
+                <div class = "form-group">
+                    <input class = "form-control" type = "text" name = "user[username]" required = "required" placeholder = "Username">
+                </div>
+                <div class = "form-group">
+                    <input class = "form-control" type = "email" name = "user[email]" required = "required" placeholder = "email.id@something.com">
+                </div>
+                <div class = "form-group">
+                    <input class = "form-control" type = "text" name = "user[phone]" required = "required" placeholder = "Phone Number">
+                    <!--type ="tel" or "number" and pattern = "^[0-9-+s()]*$" working without letters!!!-->
+                </div>
+                <div class = "form-group">
+                    <input class = "form-control" type = "text" name = "user[website]" required = "required" placeholder = "Website">
+                </div>
+                <h4>Address</h4>
+                    <div class = "form-group">
+                        <input class = "form-control" type = "text" name = "user[street]" required = "required" placeholder = "Street Name">
+                    </div>
+                    <div class = "form-group">
+                        <input class = "form-control" type = "text" name = "user[suite]" required = "required" placeholder = "Suite: Apt. 556">
+                    </div>
+                    <div class = "form-group">
+                        <input class = "form-control" type = "text" name = "user[city]" required = "required" placeholder = "City">
+                    </div>
+                    <div class = "form-group">
+                        <input class = "form-control" type = "tel" name = "user[zipcode]" pattern = "(\d{5}([\-]\d{4})?)" title = "xxxxx-xxxx or xxxxx" required = "required" placeholder = "Zipcode: 12345-6789 or 12345">
+                    </div>
+                    <h4>Geolocation</h4>
+                    <div class = "form-group">
+                        <input class = "form-control" type = "text" name = "user[lat]" id="lat" required = "required" placeholder = "Latitude: -37.3159">
+                    </div>
+                    <div class = "form-group">
+                        <input class = "form-control" type = "text" name = "user[lng]" id="lng" required = "required" placeholder = "Longitude: 81.1496">
+                    </div>
+                <!--<p></p>-->
+                <!--<div class = "form-group">-->
+                <!--    <input class = "form-control" type = "number" name = "phone" placeholder = "Phone Number">-->
+                <!--</div>-->
+                <!--<div class = "form-group">-->
+                <!--    <input class = "form-control" type = "text" name = "website" placeholder = "Website">-->
+                <!--</div>-->
+                <h4>Company</h4>
+                    <div class = "form-group">
+                        <input class = "form-control" type = "text" name = "user[companyname]" required = "required" placeholder = "Company Name">
+                    </div>
+                    <div class = "form-group">
+                        <input class = "form-control" type = "text" name = "user[catchPhrase]" required = "required" placeholder = "Company CatchPhrase">
+                    </div>
+                    <div class = "form-group">
+                        <input class = "form-control" type = "text" name = "user[bs]" required = "required" placeholder = "Company BS">
+                    </div>
+                <div class = "form-group">
+                    <button class = "btn btn-lg btn-primary btn-block">Submit!</button>
+                </div>
+            </form>
+            <div style = "text-align: center;">
+                <a class = "ui blue inverted button" href = "/users/">Go Back</a>
+            </div>
+        </div>
+    </div>        
+</div>    
+
+<% include partials/footer %>

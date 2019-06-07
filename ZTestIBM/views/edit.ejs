@@ -1,0 +1,77 @@
+<% include partials/header %>
+
+<!--<div class = "ui main text container segment">-->
+<div class = "ui main text container inverted segment">
+    <div class = "row">
+        <h1 style = "text-align: center;">Edit <%= user.name %></h1>
+        <div style = "width: 375px; margin: 25px auto"> <!--width: 30%-->
+            <form class = "ui form" action = "/users/<%= user._id %>?_method=PUT" method = "POST">
+                <h4>Personal Info</h4>
+                <div class = "form-group field">
+                    <input class = "form-control" type = "number" name = "user[id]" required = "required" value = "<%= user.id %>">
+                </div>
+                <div class = "form-group">
+                    <input class = "form-control" type = "text" name = "user[name]" required = "required" value = "<%= user.name %>">
+                </div>    
+                <div class = "form-group">
+                    <input class = "form-control" type = "text" name = "user[username]" required = "required" value = "<%= user.username %>">
+                </div>
+                <div class = "form-group">
+                    <input class = "form-control" type = "email" name = "user[email]" required = "required" value = "<%= user.email %>">
+                </div>
+                <div class = "form-group">
+                    <input class = "form-control" type = "text" name = "user[phone]"  required = "required" value = "<%= user.phone %>">
+                    <!--pattern = "^[0-9-+s()]*$" working without letters!!!-->
+                </div>
+                <div class = "form-group">
+                    <input class = "form-control" type = "text" name = "user[website]" required = "required" value = "<%= user.website %>">
+                </div>
+                <h4>Address</h4>
+                    <div class = "form-group">
+                        <input class = "form-control" type = "text" name = "user[street]" required = "required" value = "<%= user.street %>">
+                    </div>
+                    <div class = "form-group">
+                        <input class = "form-control" type = "text" name = "user[suite]" required = "required" value = "<%= user.suite %>">
+                    </div>
+                    <div class = "form-group">
+                        <input class = "form-control" type = "text" name = "user[city]" required = "required" value = "<%= user.city %>">
+                    </div>
+                    <div class = "form-group">
+                        <input class = "form-control" type = "tel" name = "user[zipcode]" pattern = "(\d{5}([\-]\d{4})?)" title = "xxxxx-xxxx or xxxxx" required = "required" value = "<%= user.zipcode %>">
+                    </div>
+                    <h4>Geolocation</h4>
+                    <div class = "form-group">
+                        <input class = "form-control" type = "text" name = "user[lat]" id="lat" required = "required" value = "<%= user.lat %>">
+                    </div>
+                    <div class = "form-group">
+                        <input class = "form-control" type = "text" name = "user[lng]" id="lng" required = "required" value = "<%= user.lng %>">
+                    </div>
+                <!--<p></p>-->
+                <!--<div class = "form-group">-->
+                <!--    <input class = "form-control" type = "number" name = "phone" placeholder = "Phone Number">-->
+                <!--</div>-->
+                <!--<div class = "form-group">-->
+                <!--    <input class = "form-control" type = "text" name = "website" placeholder = "Website">-->
+                <!--</div>-->
+                <h4>Company</h4>
+                    <div class = "form-group">
+                        <input class = "form-control" type = "text" name = "user[companyname]" required = "required" value = "<%= user.companyname %>">
+                    </div>
+                    <div class = "form-group">
+                        <input class = "form-control" type = "text" name = "user[catchPhrase]" required = "required" value = "<%= user.catchPhrase %>">
+                    </div>
+                    <div class = "form-group">
+                        <input class = "form-control" type = "text" name = "user[bs]" required = "required" value = "<%= user.bs %>">
+                    </div>
+                <div class = "form-group">
+                    <button class = "btn btn-lg btn-primary btn-block">Update</button>
+                </div>
+            </form>
+            <div style = "text-align: center;">
+                <a href = "/users">Go back</a>
+            </div>
+        </div>
+    </div>        
+</div>    
+
+<% include partials/footer %>

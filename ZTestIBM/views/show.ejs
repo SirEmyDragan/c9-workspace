@@ -1,0 +1,45 @@
+<% include partials/header %>
+
+<div class = "ui main text container inverted segment" style = "text-align: center;">
+    <div class = "ui huge header" >
+            <%= user.name %>
+    </div>
+    <div style = "display: inline-block; text-align: left;">
+        <p><label style = "padding-right:10px;">ID:</label><%= user.id %></p>
+        
+        <p><label style = "padding-right:10px;">Name:</label><%= user.name %></p>
+    
+        <p><label style = "padding-right:10px;">Username:</label><%= user.username %></p>
+        
+        <p><label style = "padding-right:10px;">Email:</label><%= user.email %></p>
+        
+        <p><label style = "padding-right:10px;">Street:</label><%= user.street %></p>
+        
+        <p><label style = "padding-right:10px;">Suite:</label><%= user.suite %></p>
+        
+        <p><label style = "padding-right:10px;">City:</label><%= user.city %></p>
+        
+        <p><label style = "padding-right:10px;">Zip Code:</label><%= user.zipcode %></p>
+        
+        <p><label style = "padding-right:10px;">Latitude:</label><%= user.lat %></p>
+        
+        <p><label style = "padding-right:10px;">Longitude:</label><%= user.lng %></p>
+        
+        <p><label style = "padding-right:10px;">Phone:</label><%= user.phone %></p>
+        
+        <p><label style = "padding-right:10px;">Website:</label><%= user.website %></p>
+        
+        <p><label style = "padding-right:10px;">Company Name:</label><%= user.companyname %></p>
+        
+        <p><label style = "padding-right:10px;">Catch Phrase:</label><%= user.catchPhrase %></p>
+        
+        <p><label style = "padding-right:10px;">BS:</label><%= user.bs %></p>
+        <a class = "ui blue inverted button" href = "/users/">Go Back</a>
+        <a class = "ui green inverted button" href = "/users/<%= user._id %>/edit">Edit</a>
+        <form id = "delete" action = "/users/<%= user._id %>?_method=DELETE" method = "POST">
+            <button class = "ui red inverted button">Delete</button>
+        </form>
+    </div>
+</div>
+
+<% include partials/footer %>

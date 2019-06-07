@@ -1,0 +1,32 @@
+<% include partials/header %>
+
+<div class = "main container ui inverted segment" >
+    <header class = "jumbotron ui inverted segment"> <!--style = "text-align: center;"-->
+        <div class = "container">
+            <h1>Welcome to the Users List!</h1>
+            <!--<p>-->
+            <!--    <a class = "btn btn-primary btn-lg" href = "/users/new">Add New User</a>-->
+            <!--</p>-->
+        </div>
+    </header>
+    
+    <div class = "column ui inverted segment" style = "display:flex; flex-direction: column;">
+    
+        <% users.forEach(function(user){ %>
+            <div class = "col-md-3 col-sm-6">
+                    <ul style = "list-style: none;">
+                        <li>
+                            <h4>
+                                <a href = "/users/<%= user._id %>">
+                                    <%= user.id  %>
+                                    <%= user.name %>
+                                </a>    
+                            </h4>    
+                        </li>
+                    </ul>
+            </div>
+        <% }); %>
+    </div>
+</div>
+
+<% include partials/footer %>
